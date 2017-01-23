@@ -1,0 +1,26 @@
+<rt-import name="ChatoChatHistory" from="./CathoChatHistory/CathoChatHistory.js"/>
+
+<div class="catho-chat-box">
+  <div class="catho-chat-box__title">
+    <h3 class="title-text" onClick="{(event) => this.changePopupVisibility(!this.state.popupIsOpen)}">
+      Vaga: Desenvolvedor Front-end
+    </h3>
+
+    <div class="title-actions">
+      <i rt-if="this.state.popupIsOpen"
+        onClick="{(event) => this.changePopupVisibility(!this.state.popupIsOpen)}"
+        class="fa fa-minus title-action" aria-hidden="true"></i>
+      <i class="fa fa-times title-action" onClick="{(event) => this.close(event)}"></i>
+    </div>
+  </div>
+
+  <ChatoChatHistory.default
+    rt-if="this.state.popupIsOpen"
+    talkMessages="{this.state.talkMessages}" />
+
+  <div rt-if="this.state.popupIsOpen" class="catho-chat-box__message-form-wrapper">
+    <form onSubmit="(event) => this.submitMessage()">
+      <input type="text" ref="{ ref => this.message = ref}">
+    </form>
+  </div>
+</div>

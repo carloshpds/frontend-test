@@ -1,0 +1,30 @@
+
+<div class="catho-chat-history">
+  <ul class="catho-chat-history__history-list">
+    <li rt-repeat="talkMessage, talkMessageIndex in this.state.talkMessages" key="{talkMessage.id}"
+      class="history-talk-message-item"
+      rt-class="{
+        'my-message' : talkMessage.user.id === this.me.id
+      }">
+
+      <div rt-if="talkMessage.user.id !== this.me.id &&
+        ( !this.state.talkMessages[talkMessageIndex - 1] || this.state.talkMessages[talkMessageIndex - 1].user.id === this.me.id)"
+         class="user-picture-wrapper">
+        <div class="user-picture"></div>
+      </div>
+
+      <div class="history-message-box">
+        <div class="history-message-box-content">
+          <p class="history-message">{talkMessage.message.message}</p>
+        </div>
+      </div>
+
+      <div rt-if="talkMessage.user.id === this.me.id &&
+        ( !this.state.talkMessages[talkMessageIndex - 1] || this.state.talkMessages[talkMessageIndex - 1].user.id !== this.me.id)"
+        class="user-picture-wrapper">
+        <div class="user-picture"></div>
+      </div>
+
+    </li>
+  </div>
+</div>
