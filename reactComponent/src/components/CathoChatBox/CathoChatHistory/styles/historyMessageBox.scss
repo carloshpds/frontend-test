@@ -8,7 +8,7 @@
     background: #d9d9d9;
     padding: 10px 10px 30px 10px;
     position: relative;
-    min-height: 16px;
+    min-height: 25px;
 
     &:before {
       border-top: 5px solid transparent;
@@ -56,6 +56,24 @@
         color: #508db8;
       }
     }
+  }
+
+}
+
+@media screen and (max-width: $chat-box-desktop-width){
+  .history-message-box {
+    width: $chat-box-mobile-width - ($user-picture-wrapper-width + 70px);
+
+    .history-message-box-content {
+      .history-message {
+        margin: 0;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 40px;
+      }
+    }
+
   }
 
 }

@@ -64,3 +64,10 @@ $fa-font-path: '../fontAwesome';
     }
   }
 }
+
+@media screen and (max-width: $chat-box-desktop-width){
+  .catho-chat-box {
+    left: calc(50% - #{$chat-box-mobile-width/2});
+    width: $chat-box-mobile-width;
+  }
+}
