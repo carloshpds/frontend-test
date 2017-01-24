@@ -4,7 +4,8 @@
     <li rt-repeat="talkMessage, talkMessageIndex in this.state.talkMessages" key="{talkMessage.id}"
       class="history-talk-message-item"
       rt-class="{
-        'my-message' : talkMessage.user.id === this.me.id
+        'my-message' : talkMessage.user.id === this.me.id,
+        'same-previous-id': this.state.talkMessages[talkMessageIndex - 1] && talkMessage.user.id === this.state.talkMessages[talkMessageIndex - 1].user.id
       }">
 
       <div rt-if="talkMessage.user.id !== this.me.id &&
@@ -16,6 +17,13 @@
       <div class="history-message-box">
         <div class="history-message-box-content">
           <p class="history-message">{talkMessage.message.message}</p>
+          <i
+            class="fa alreary-read-icon"
+            aria-hidden="true"
+            rt-class="{
+              'fa-check-circle-o seen' : talkMessage.message.alreadyRead,
+              'fa-clock-o not-seen' : !talkMessage.message.alreadyRead
+            }"></i>
         </div>
       </div>
 

@@ -13,14 +13,18 @@
     padding: 0;
 
     .history-talk-message-item {
-      margin-top: 10px;
+
+      &.same-previous-id {
+        margin-top: -10px;
+      }
     }
   }
 
   .invisibel-user-picture-col,
   .user-picture-wrapper {
-    width: $user-picture-wrapper-width;;
-    float: left;
+    width: $user-picture-wrapper-width;
+    display: inline-block;
+    // float: left;
 
     .user-picture {
       height: 70px;
@@ -36,14 +40,26 @@
     width: $chat-box-desktop-width - ($user-picture-wrapper-width + 70px);
     vertical-align: top;
     padding: 0 10px 10px 20px;
-    float: left;
+    // float: left;
+    display: inline-block;
 
     .history-message-box-content {
       background: #d9d9d9;
-      padding: 10px;
+      padding: 10px 10px 30px 10px;
+      position: relative;
 
       .history-message {
         margin: 0;
+      }
+
+      .alreary-read-icon {
+        position: absolute;
+        bottom: 5px;
+        left: 10px;
+
+        &.seen {
+          color: #508db8;
+        }
       }
     }
 
@@ -51,16 +67,16 @@
 
   .my-message {
     .user-picture-wrapper {
-      float: right;
+      // float: right;
 
       .user-picture {
         background: blue;
       }
     }
 
-    .history-message-box {
-      float: left;
-    }
+    // .history-message-box {
+    //   float: left;
+    // }
 
   }
 }
