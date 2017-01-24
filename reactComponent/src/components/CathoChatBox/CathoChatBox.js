@@ -1,8 +1,12 @@
 import { Component } from 'react';
 import template from './cathoChatBox.template.rt';
 import Talk from './Data/talk.js';
+import moment from 'moment';
 import './cathoChatBox.scss';
 import ME from './Data/me.js';
+
+
+moment.lang('pt-br');
 
 export default class CategoryBrowse extends Component {
 

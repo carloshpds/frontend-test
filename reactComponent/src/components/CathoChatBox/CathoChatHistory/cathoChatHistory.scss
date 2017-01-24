@@ -5,6 +5,7 @@
   overflow: auto;
   padding: 10px;
   $user-picture-wrapper-width: 70px;
+  $messageDetailsMargin: 5px;
 
 
   .catho-chat-history__history-list {
@@ -65,10 +66,17 @@
         padding-left: 40%;
       }
 
+      .message-time {
+        position: absolute;
+        bottom: 5px;
+        left: $messageDetailsMargin;
+        font-size: 12px;
+      }
+
       .message-details {
         position: absolute;
         bottom: 20px;
-        left: 5px;
+        left: $messageDetailsMargin;
 
         .message-detail {
           margin: 0;
@@ -114,6 +122,24 @@
         position: absolute;
         left: initial;
         right: -5px;
+      }
+
+      .history-message {
+        padding-left: 0;
+        padding-right: 40%;
+      }
+
+      .message-details {
+        position: absolute;
+        bottom: 20px;
+        left: initial;
+        right: $messageDetailsMargin;
+      }
+
+      .message-time {
+        position: absolute;
+        right: $messageDetailsMargin;
+        left: initial;
       }
     }
   }

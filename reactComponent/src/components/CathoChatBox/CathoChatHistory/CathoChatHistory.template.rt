@@ -1,3 +1,4 @@
+<rt-import name="moment" from="moment"/>
 
 <div class="catho-chat-history">
   <ul class="catho-chat-history__history-list">
@@ -25,12 +26,14 @@
               'fa-check-circle-o seen' : talkMessage.message.alreadyRead,
               'fa-clock-o not-seen' : !talkMessage.message.alreadyRead
             }"></i>
+            <span  rt-if="moment(talkMessage.message.time).diff(new Date(), 'minutes') < 10" class="message-time">enviado há {moment(talkMessage.message.time).fromNow(true)}</span>
+            <span  rt-if="moment(talkMessage.message.time).diff(new Date(), 'minutes') > 10 && moment(talkMessage.message.time).diff(new Date(), 'days') < 1" class="message-time">enviado as {moment(talkMessage.message.time).format('HH:mm')}</span>
+            <span  rt-if="moment(talkMessage.message.time).diff(new Date(), 'days') > 1" class="message-time">enviado em {moment(talkMessage.message.time).format('L')}</span>
 
           <div class="message-details">
             <p rt-if="talkMessage.user.id !== this.me.id" class="message-detail message-user-name">{talkMessage.user.name}</p>
             <p rt-if="talkMessage.user.id === this.me.id" class="message-detail message-user-name">Você</p>
             <p  class="message-detail message-company-name" rt-if="talkMessage.company">{talkMessage.company.name}</p>
-            <p  class="message-detail message-time">{talkMessage.message.time}</p>
           </div>
         </div>
       </div>
