@@ -19,8 +19,11 @@
     talkMessages="{this.state.talkMessages}" />
 
   <div rt-if="this.state.popupIsOpen" class="catho-chat-box__message-form-wrapper">
-    <form onSubmit="(event) => this.submitMessage()">
-      <input type="text" ref="{ ref => this.message = ref}">
+    <form class="message-form" onSubmit="(event) => this.submitMessage(event)">
+      <input class="message-input"
+        type="text"
+        ref="{ ref => this.message = ref}"
+        placeholder="Digite aqui sua mensagem...">
     </form>
   </div>
 </div>

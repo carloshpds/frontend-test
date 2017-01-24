@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import template from './CathoChatHistory.template.rt';
+import template from './cathoChatHistory.template.rt';
 import './cathoChatHistory.scss';
 import ME from '../Data/me.js';
 
