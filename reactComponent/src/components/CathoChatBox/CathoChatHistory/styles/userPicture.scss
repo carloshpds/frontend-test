@@ -1,0 +1,10 @@
+ .user-picture-wrapper {
+    width: $user-picture-wrapper-width;
+    display: inline-block;
+
+    .user-picture {
+      height: 70px;
+      width: $user-picture-wrapper-width;;
+      background: #eeeeee;
+    }
+  }

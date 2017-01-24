@@ -1,0 +1,15 @@
+@import '../../variables.scss';
+
+.catho-chat-history {
+  height: 400px;
+  overflow: auto;
+  padding: 10px;
+  $user-picture-wrapper-width: 70px;
+  $messageDetailsMargin: 5px;
+
+
+  @import './historyList';
+  @import './userPicture';
+  @import './historyMessageBox';
+  @import './myMessage';
+}

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import template from './cathoChatHistory.template.rt';
-import './cathoChatHistory.scss';
+import './styles/cathoChatHistory.scss';
 import ME from '../Data/me.js';
 
 export default class CathoChatHistory extends Component {

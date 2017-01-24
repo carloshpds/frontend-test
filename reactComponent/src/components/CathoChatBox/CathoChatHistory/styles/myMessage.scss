@@ -1,0 +1,43 @@
+.my-message {
+  .user-picture-wrapper {
+
+    .user-picture {
+      background: #00539e;
+    }
+  }
+
+
+  .history-message-box-content {
+    background: #d9d9d9;
+    padding: 10px 10px 30px 10px;
+    position: relative;
+
+    &:before {
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid #d9d9d9;
+      border-right: none;
+      position: absolute;
+      left: initial;
+      right: -5px;
+    }
+
+    .history-message {
+      padding-left: 0;
+      padding-right: 40%;
+    }
+
+    .message-details {
+      position: absolute;
+      bottom: 20px;
+      left: initial;
+      right: $messageDetailsMargin;
+    }
+
+    .message-time {
+      position: absolute;
+      right: $messageDetailsMargin;
+      left: initial;
+    }
+  }
+}

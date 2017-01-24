@@ -1,0 +1,61 @@
+.history-message-box{
+  width: $chat-box-desktop-width - ($user-picture-wrapper-width + 70px);
+  vertical-align: top;
+  padding: 0 10px 10px 20px;
+  display: inline-block;
+
+  .history-message-box-content {
+    background: #d9d9d9;
+    padding: 10px 10px 30px 10px;
+    position: relative;
+    min-height: 16px;
+
+    &:before {
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-right: 5px solid #d9d9d9;
+      position: absolute;
+      top: 10px;
+      left: -5px;
+      content: '';
+    }
+
+    .history-message {
+      margin: 0;
+      width: 60%;
+      padding-left: 40%;
+    }
+
+    .message-time {
+      position: absolute;
+      bottom: 5px;
+      left: $messageDetailsMargin;
+      font-size: 12px;
+    }
+
+    .message-details {
+      position: absolute;
+      bottom: 20px;
+      left: $messageDetailsMargin;
+
+      .message-detail {
+        margin: 0;
+      }
+
+      .message-company-name {
+        font-weight: 600;
+      }
+    }
+
+    .alreary-read-icon {
+      position: absolute;
+      bottom: 5px;
+      left: 10px;
+
+      &.seen {
+        color: #508db8;
+      }
+    }
+  }
+
+}
