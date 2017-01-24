@@ -20,10 +20,18 @@
           <i
             class="fa alreary-read-icon"
             aria-hidden="true"
+            rt-if="talkMessage.user.id === this.me.id"
             rt-class="{
               'fa-check-circle-o seen' : talkMessage.message.alreadyRead,
               'fa-clock-o not-seen' : !talkMessage.message.alreadyRead
             }"></i>
+
+          <div class="message-details">
+            <p rt-if="talkMessage.user.id !== this.me.id" class="message-detail message-user-name">{talkMessage.user.name}</p>
+            <p rt-if="talkMessage.user.id === this.me.id" class="message-detail message-user-name">Você</p>
+            <p  class="message-detail message-company-name" rt-if="talkMessage.company">{talkMessage.company.name}</p>
+            <p  class="message-detail message-time">{talkMessage.message.time}</p>
+          </div>
         </div>
       </div>
 

@@ -15,7 +15,8 @@
     .history-talk-message-item {
 
       &.same-previous-id {
-        margin-top: -10px;
+        margin-top: -5px;
+        margin-bottom: 0;
       }
     }
   }
@@ -40,16 +41,42 @@
     width: $chat-box-desktop-width - ($user-picture-wrapper-width + 70px);
     vertical-align: top;
     padding: 0 10px 10px 20px;
-    // float: left;
     display: inline-block;
 
     .history-message-box-content {
       background: #d9d9d9;
       padding: 10px 10px 30px 10px;
       position: relative;
+      min-height: 16px;
+
+      &:before {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-right: 5px solid #d9d9d9;
+        position: absolute;
+        top: 10px;
+        left: -5px;
+        content: '';
+      }
 
       .history-message {
         margin: 0;
+        width: 60%;
+        padding-left: 40%;
+      }
+
+      .message-details {
+        position: absolute;
+        bottom: 20px;
+        left: 5px;
+
+        .message-detail {
+          margin: 0;
+        }
+
+        .message-company-name {
+          font-weight: 600;
+        }
       }
 
       .alreary-read-icon {
@@ -67,16 +94,27 @@
 
   .my-message {
     .user-picture-wrapper {
-      // float: right;
 
       .user-picture {
-        background: blue;
+        background: #00539e;
       }
     }
 
-    // .history-message-box {
-    //   float: left;
-    // }
 
+    .history-message-box-content {
+      background: #d9d9d9;
+      padding: 10px 10px 30px 10px;
+      position: relative;
+
+      &:before {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid #d9d9d9;
+        border-right: none;
+        position: absolute;
+        left: initial;
+        right: -5px;
+      }
+    }
   }
 }
