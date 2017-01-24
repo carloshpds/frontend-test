@@ -1,0 +1,10 @@
+<rt-import name="CathoChatBox" from="./CathoChatBox/CathoChatBox.js" />
+
+<div className="index">
+  <h1 className="app-title">Catho Chat Box</h1>
+  <CathoChatBox.default rt-if="this.state.chatBoxIsAlive" onClose="{() => this.setChatAlive(false)}" />
+  <button
+    rt-if="!this.state.chatBoxIsAlive"
+    onClick="{() => this.setChatAlive(true)}"
+    class="keep-chat-alive-btn"> Restaurar conversa </button>
+</div>

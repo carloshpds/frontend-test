@@ -1,4 +1,4 @@
-
+@import './CathoChatBox/variables';
 
 // ====
 // General
@@ -16,4 +16,27 @@ body {
 
 .profile-name {
   color: red;
+}
+
+.keep-chat-alive-btn {
+  $keepAliveBtnWidth: 100px;
+
+  position: absolute;
+  width: $keepAliveBtnWidth;
+  height: $keepAliveBtnWidth;
+  left: calc(50% - #{$keepAliveBtnWidth / 2});
+  background: $blue;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 100px;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+
 }

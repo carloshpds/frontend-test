@@ -2,12 +2,12 @@
 import React from 'react';
 
 import './overridesPublicPath.js';
-import CategoryBrowse from './CategoryBrowse/CategoryBrowse';
+import CathoChatBox from './CathoChatBox/CathoChatBox';
 
 class AppComponent extends React.Component {
   render() {
     return (
-      <CategoryBrowse />
+      <CathoChatBox />
     );
   }
 }

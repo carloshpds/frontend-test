@@ -1,18 +1,24 @@
 
 import './main.dev.scss';
 import CathoChatBox from './CathoChatBox/CathoChatBox.js';
+import template from './main.dev.template.rt';
 import React from 'react';
 
 class AppComponent extends React.Component {
+
+  constructor(props){
+     super(props);
+     this.state = {
+       chatBoxIsAlive: true
+     }
+  }
+
   render() {
-    return (
-      <div className="index">
-        <h1 className="app-title">Catho Chat Box</h1>
+    return template.call(this);
+  }
 
-        <CathoChatBox />
-      </div>
-
-    );
+  setChatAlive(isAlive){
+    this.setState({ chatBoxIsAlive: isAlive });
   }
 }
 

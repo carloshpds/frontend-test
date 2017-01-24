@@ -5,7 +5,7 @@ import moment from 'moment';
 import './cathoChatBox.scss';
 import ME from './Data/me.js';
 
-
+// current language
 moment.lang('pt-br');
 
 export default class CategoryBrowse extends Component {
@@ -41,8 +41,7 @@ export default class CategoryBrowse extends Component {
 
     if(this.message.value){
       let time = new Date().getTime()
-      let talkMessages = this.state.talkMessages;
-      talkMessages.push({
+      Talk.talkMessages.push({
         id: time,
         user: ME,
         message: {
@@ -52,7 +51,7 @@ export default class CategoryBrowse extends Component {
         }
       });
 
-      this.setState({talkMessages}, () => {
+      this.setState({talkMessages: Talk.talkMessages}, () => {
         this.message.value = '';
       });
     }
